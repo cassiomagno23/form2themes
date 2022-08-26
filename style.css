@@ -1,0 +1,184 @@
+/* VARIÁVEIS DE COR */
+:root{ 
+  --color-white: #181818;
+  --color-red: #e63636;
+  --color-dark1: #fff;
+  --color-dark2: #ececec;
+  --color-purple1: #9333ff;
+  --color-purple2: indigo;
+
+}
+
+.light-mode:root{
+  --color-white: #fff;
+  --color-red: #e63636;
+  --color-dark1: #181818;
+  --color-dark2: #1e1e1e;
+  --color-purple1: #9333ff;
+  --color-purple2: indigo;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background: var(--color-dark1);
+  color: var(--color-white);
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content{
+  background-color: var(--color-dark2);
+  padding: 2rem;
+  border-radius: 10px;
+  min-width: 30%;
+  overflow: auto;
+}
+
+/* ============ BOTÃO SWITCH CHECK ============ */
+.check-radio{
+  position: absolute;
+  margin: -850px 0px 0 0;
+}
+
+.darkmode-text{
+  position: absolute;
+  margin: -800px 0px 0 0;
+  font-weight: bold;
+}
+
+.check-radio input{
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #eee;
+  width: 40px;
+  height: 15px;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 5px rgba(0,0,0,.5);
+}
+
+.check-radio input:focus{
+  outline: none;
+  cursor: pointer;
+}
+
+.check-radio input:before{
+  content: '';
+  margin-top: -2.5px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px #333, 0 2px 5px rgba(0,0,0,.5);
+  position: absolute;
+  left: 0;
+  transition: left .3s ease-out;
+  -webkit-transition: left .3s ease-out;
+}
+
+.check-radio input:after{
+  content: '';
+  display: block;
+  margin-top: -2.5px;
+  left: 20px;
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  transition: left .3s ease-out;
+  -webkit-transition: left .3s ease-out;
+  color: #666;
+}
+
+.check-radio input:checked{
+  background-color: lime;
+}
+
+.check-radio input:checked:before{
+  left: 22.5px;
+  box-shadow: inset 0 0 0 2px green, 0 2px 5px rgba(0,0,0,.5);
+}
+
+.check-radio input:checked:after{
+  content: '';
+  left: 43.5px;
+  color: green;
+}
+
+/* =============== FINAL SWITCH CHECK =================*/
+
+h1{
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.content form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.span-required{
+  font-size: 12px;
+  margin: 3px 0 0 1px;
+  color: var(--color-red);
+  display: none;
+}
+
+.inputs{
+  padding: 8px 5px;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--color-dark1);
+  border: 2px solid var(--color-dark1);
+  color: var(--color-white);
+  width: 100%;
+  transition: .3s;
+}
+
+.inputs:focus{
+  border-color: var(--color-purple1);
+}
+
+.box-select{
+  display: flex;
+  justify-content:space-evenly;
+  font-weight: bold;
+  gap: 1rem;
+}
+
+button[type="submit"]{
+  padding: 1rem;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  background-color: var(--color-purple2);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover{
+  background-color: var(--color-purple1)
+}
+
+@media screen and (max-width: 576px){
+  .box-select{
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+
+
